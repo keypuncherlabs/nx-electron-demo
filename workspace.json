@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "electron-demo": "apps/electron-demo",
     "react-desktop-ui": "apps/react-desktop-ui",
     "react-desktop-ui-e2e": "apps/react-desktop-ui-e2e"
   }

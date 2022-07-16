@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -51,7 +53,8 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "react-desktop-ui:build",
-        "hmr": true
+        "hmr": true,
+        "proxyConfig": "apps/react-desktop-ui/proxy.conf.json"
       },
       "configurations": {
         "development": {
@@ -65,14 +68,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/react-desktop-ui/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/react-desktop-ui/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/react-desktop-ui"],
+      "outputs": [
+        "coverage/apps/react-desktop-ui"
+      ],
       "options": {
         "jestConfig": "apps/react-desktop-ui/jest.config.ts",
         "passWithNoTests": true

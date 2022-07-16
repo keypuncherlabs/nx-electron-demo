@@ -40,5 +40,8 @@
       }
     }
   },
-  "defaultProject": "react-desktop-ui"
+  "defaultProject": "react-desktop-ui",
+  "cli": {
+    "defaultCollection": "nx-electron"
+  }
 }

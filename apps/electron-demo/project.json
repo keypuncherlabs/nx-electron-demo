@@ -1,0 +1,77 @@
+{
+  "sourceRoot": "apps/electron-demo/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx-electron:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/electron-demo",
+        "main": "apps/electron-demo/src/main.ts",
+        "tsConfig": "apps/electron-demo/tsconfig.app.json",
+        "assets": [
+          "apps/electron-demo/src/assets"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/electron-demo/src/environments/environment.ts",
+              "with": "apps/electron-demo/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "nx-electron:execute",
+      "options": {
+        "buildTarget": "electron-demo:build"
+      }
+    },
+    "package": {
+      "executor": "nx-electron:package",
+      "options": {
+        "name": "electron-demo",
+        "frontendProject": "react-desktop-ui",
+        "outputPath": "dist/packages",
+        "prepackageOnly": true
+      }
+    },
+    "make": {
+      "executor": "nx-electron:make",
+      "options": {
+        "name": "electron-demo",
+        "frontendProject": "react-desktop-ui",
+        "outputPath": "dist/executables"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/electron-demo/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/electron-demo"
+      ],
+      "options": {
+        "jestConfig": "apps/electron-demo/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
