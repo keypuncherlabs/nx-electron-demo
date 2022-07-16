@@ -6,6 +6,10 @@
   "electronCompile": false,
   "npmRebuild": false,
   "asar": true,
+  "mac": {
+    "target": "dmg",
+    "type": "development"
+  },
   "win": {
     "target": "appx",
     "icon": "relative\\path\\to\\app_icon.ico",
