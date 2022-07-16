@@ -13,7 +13,7 @@
         "compiler": "babel",
         "outputPath": "dist/apps/react-desktop-ui",
         "index": "apps/react-desktop-ui/src/index.html",
-        "baseHref": "/",
+        "baseHref": "./",
         "main": "apps/react-desktop-ui/src/main.tsx",
         "polyfills": "apps/react-desktop-ui/src/polyfills.ts",
         "tsConfig": "apps/react-desktop-ui/tsconfig.app.json",
