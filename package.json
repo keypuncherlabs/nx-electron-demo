@@ -2,6 +2,8 @@
   "name": "nx-electron-demo",
   "version": "0.0.0",
   "license": "MIT",
+  "author": "Keypuncher LLC",
+  "description": "Simple electron desktop demo application",
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
